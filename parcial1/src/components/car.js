@@ -1,13 +1,12 @@
 import React from "react";
-import { FormattedDate, FormattedNumber, FormattedMessage } from 'react-intl';
 
-const Car = (props) => {
-
+const Car = ({ car, onClick }) => {
     return (
-      <tr>
-        <td>{props.car.marca}</td>
-        <td>{props.car.modelo}</td>
-        <td>{props.car.linea}</td>
+      <tr onClick={onClick}>
+        <td>{car.id}</td>
+        <td>{car.marca}</td>
+        <td>{car.linea}</td>
+        <td>{car.modelo}</td>
       </tr>
     );
 };

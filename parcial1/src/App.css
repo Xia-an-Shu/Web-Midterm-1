@@ -30,7 +30,7 @@
 }
 
 .title {
-  padding: 3%;
+  padding: 1.5%;
   font-size: 1.7rem;
   font-weight: bold;
   text-shadow: 1px 1px 2px #000000;
@@ -59,16 +59,22 @@
 }
 
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
   padding-bottom: 2%;
+  padding-top: 5%;
 }
 
 .logo {
-  max-height: 20vh;
+  max-height: 30vh;
   width: 100%;
   object-fit: cover;
+}
+
+.auth-error {
+  padding-top: 1%;
+  color:#f44336;
+  font-weight: bold;
 }

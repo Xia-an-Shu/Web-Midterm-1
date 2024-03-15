@@ -12,11 +12,10 @@ function App() {
   }
 
   const [formValues, setFormValues] = useState({ user: '', password: '' });
-  const [validationStates, setValidationStates] = useState({ userState: true, passwordState: true });
+  const [validationStates, setValidationStates] = useState({ credentialState: true });
 
   const handlePasswordChange = (e) => {
     setFormValues({ ...formValues, password: e.target.value });
-    validatePassword(e.target.value);
   };
 
   const handleUserChange = (e) => {
@@ -25,16 +24,13 @@ function App() {
 
   const validatePassword = (user, password) => {
     // Check if user and password are both correct
-    const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{9,}$/;
     console.log(user, password, credentials.user, credentials.password);
-    if (re.test(password)) {
-      if (user === credentials.user && password === credentials.password) {
-        alert('Welcome to TuSegundazo.com');
-        // Navigate to /carlist
-        navigate('/carlist');
-      } else {
-        alert('Invalid credentials');
-      }
+    if (user === credentials.user && password === credentials.password) {
+      // Navigate to /carlist
+      navigate('/carlist');
+    } else {
+      // Set the validation state to false
+      setValidationStates({ ...validationStates, credentialState: false });
     }
   };
 
@@ -44,7 +40,7 @@ function App() {
 
   const cancelButton = () => {
     setFormValues({ user: '', password: '' });
-    setValidationStates({ userState: true, passwordState: true });
+    setValidationStates({ credentialState: true });
   }
 
   return (
@@ -65,14 +61,12 @@ function App() {
 
             <Form.Group className="mb-6" controlId="formBasicUser">
               <Form.Label>Nombre de usuario</Form.Label>
-              <Form.Control type="user" value={formValues.user } onChange={handleUserChange} className={validationStates.userState ? '' : 'input-invalid'}/>
-              { !validationStates.userState && <Form.Text className="text-muted">Invalid user address.</Form.Text>}
+              <Form.Control type="user" value={formValues.user } onChange={handleUserChange} className={validationStates.credentialState ? '' : 'input-invalid'}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Contraseña</Form.Label>
-              <Form.Control type="password" onChange={handlePasswordChange} value={formValues.password} className={validationStates.passwordState ? '' : 'input-invalid'}/>
-              { !validationStates.passwordState && <Form.Text className="text-muted">Your password should have numbers and letters and should be at least 9 char long</Form.Text>}
+              <Form.Control type="password" onChange={handlePasswordChange} value={formValues.password} className={validationStates.credentialState ? '' : 'input-invalid'}/>
             </Form.Group>
 
             <div className="button-container">
@@ -86,6 +80,12 @@ function App() {
               </Button>
 
             </div>
+
+            <Form.Group className="mb-3" >
+
+              { !validationStates.credentialState && <div className="auth-error">Error de autenticacion. Revise sus credenciales</div>}
+
+            </Form.Group>
 
           </Form>
         </div>

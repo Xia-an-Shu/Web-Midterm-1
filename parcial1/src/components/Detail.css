@@ -1,0 +1,33 @@
+.square {
+    width: 30vmin;
+    height: 30vmin;
+    background-color: #D3D3D3; /* This is a dark white color */
+    border: 1px solid black;
+    margin-left: 15%;
+}
+
+.square-img-name {
+    padding-top: 6%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.square img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.square p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.square-name {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 10%;
+}
