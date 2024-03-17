@@ -1,22 +1,25 @@
 import React from "react";
 import "./Detail.css"
 
-const Detail = (props) => {
+import { FormattedMessage } from "react-intl";
+
+const Detail = ( {car} ) => {
 
     return (
         <div className="square">
             
             <div className="square-img-name">
-                <div className="square-name"> {props.car.marca + " " + props.car.linea} </div>
-                <img src={props.car.img} alt={props.car.marca} />
+                <div className="square-name"> {car.marca + " " + car.linea} </div>
+                <img className="square-img" src={car.imagen} alt={car.marca} />
             </div>
             <p>
-                &rarr; Kilometraje: {props.car.kilometraje}
+                &rarr; <FormattedMessage id="Kilometraje"/>: {car.kilometraje}
                 <br></br>
-                &rarr; Color: {props.car.color}
+                &rarr; <FormattedMessage id="Color"/>: {car.color}
                 <br></br>
-                &rarr; Referencia: {props.car.referencia}
+                &rarr; <FormattedMessage id="Referencia"/>: {car.referencia}
             </p>
+            
         </div>
     );  
 };

@@ -1,12 +1,13 @@
 import React from "react";
+import "./Car.css";
 
 const Car = ({ car, onClick }) => {
     return (
-      <tr onClick={onClick}>
-        <td>{car.id}</td>
-        <td>{car.marca}</td>
-        <td>{car.linea}</td>
-        <td>{car.modelo}</td>
+      <tr onClick={onClick} className="table-row">
+        <td className="car-id car-text">{car.id}</td>
+        <td className="car-text">{car.marca}</td>
+        <td className="car-text">{car.linea}</td>
+        <td className="car-text">{car.modelo}</td>
       </tr>
     );
 };

@@ -3,15 +3,13 @@ import './App.css';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+import { FormattedMessage } from "react-intl";
+
 function App() {
+
   const navigate = useNavigate();
 
-  const credentials = {
-    "user": "test",
-    "password": "test"
-  }
-
-  const [formValues, setFormValues] = useState({ user: '', password: '' });
+  const [formValues, setFormValues] = useState({ login: '', password: '' });
   const [validationStates, setValidationStates] = useState({ credentialState: true });
 
   const handlePasswordChange = (e) => {
@@ -19,24 +17,33 @@ function App() {
   };
 
   const handleUserChange = (e) => {
-    setFormValues({ ...formValues, user: e.target.value });
+    setFormValues({ ...formValues, login: e.target.value });
   }
 
-  const validatePassword = (user, password) => {
-    // Check if user and password are both correct
-    console.log(user, password, credentials.user, credentials.password);
-    if (user === credentials.user && password === credentials.password) {
-      // Navigate to /carlist
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formValues)
+    });
+
+    const data = await response.json();
+
+    if (response.status === 200) {
+      // Handle successful login
+      console.log(data.message);
       navigate('/carlist');
-    } else {
-      // Set the validation state to false
-      setValidationStates({ ...validationStates, credentialState: false });
+    } else if (response.status === 401) {
+      // Handle unsuccessful login
+      console.log(data.message);
+      setValidationStates({ credentialState: false });
     }
   };
 
-  const clickSubmit = () => {
-    validatePassword(formValues.user, formValues.password);
-  };
 
   const cancelButton = () => {
     setFormValues({ user: '', password: '' });
@@ -46,44 +53,57 @@ function App() {
   return (
     
     <div className='app'>
+
         <div className='title'>TuSegundazo.com</div>
 
-        <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="logo" className="logo" />
+        <hr className="hr-line-first" />  
+
+        <img src={process.env.PUBLIC_URL + "/images/banner.png"} alt="logo" className="logo" />
 
         <hr className="hr-line" />
 
         <div className="title-sesion">
-          Inicio de sesion
+          <FormattedMessage id="Inicio de sesión"/>
         </div>
 
         <div className="form-container">
           <Form>
 
             <Form.Group className="mb-6" controlId="formBasicUser">
-              <Form.Label>Nombre de usuario</Form.Label>
-              <Form.Control type="user" value={formValues.user } onChange={handleUserChange} className={validationStates.credentialState ? '' : 'input-invalid'}/>
+              <Form.Label>
+                <FormattedMessage id="Nombre de usuario"/>
+              </Form.Label>
+              <Form.Control type="user" value={formValues.user } onChange={handleUserChange} className={validationStates.credentialState ? 'form-space' : 'form-space input-invalid'}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control type="password" onChange={handlePasswordChange} value={formValues.password} className={validationStates.credentialState ? '' : 'input-invalid'}/>
+              <Form.Label>
+                <FormattedMessage id="Contraseña"/>
+              </Form.Label>
+              <Form.Control type="password" onChange={handlePasswordChange} value={formValues.password} className={validationStates.credentialState ? 'form-space' : 'form-space input-invalid'}/>
             </Form.Group>
 
             <div className="button-container">
 
-              <Button variant="primary" onClick={clickSubmit}>
-                Ingresar
+              <Button variant="primary" className='start-buttons' onClick={handleSubmit}>
+                <FormattedMessage id="Ingresar"/>
               </Button>
 
-              <Button variant="primary" className='button-cancel' onClick={cancelButton}>
-                Cancelar
+              <Button variant="primary" className='button-cancel start-buttons' onClick={cancelButton}>
+                <FormattedMessage id="Cancelar"/>
               </Button>
 
             </div>
 
             <Form.Group className="mb-3" >
 
-              { !validationStates.credentialState && <div className="auth-error">Error de autenticacion. Revise sus credenciales</div>}
+              { !validationStates.credentialState && 
+
+              <div className="auth-error">
+                <FormattedMessage id="Error de autenticacion. Revise sus credenciales"/>
+              </div>
+              
+              }
 
             </Form.Group>
 

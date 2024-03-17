@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import {IntlProvider} from 'react-intl';
+
 import localeEsMessages from "./locales/es";
 import localeEnMessages from "./locales/en";
+import {IntlProvider} from 'react-intl';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import routes from './components/routes/Routes';
@@ -25,18 +25,20 @@ console.log("locale: ", locale);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <IntlProvider locale={locale} messages={messages}>
-    <Router basename="/">
-      <Routes>
-        {
-          routes.map((route, index) => (
-              <Route key={index} path={route.path} exact element={<route.component />} />
-            )
-          ) 
-        }
-      </Routes>
-    </Router>
+      <Router basename="/">
+        <Routes>
+          {
+            routes.map((route, index) => (
+                <Route key={index} path={route.path} exact element={<route.component locale={locale} />} />
+              )
+            ) 
+          }
+        </Routes>
+      </Router>
   </IntlProvider>
+
 );
 
 

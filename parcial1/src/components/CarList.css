@@ -1,9 +1,32 @@
+.car-list {
+    margin-left: 9vmin;
+    margin-right: 9vmin;
+    height: 100vmin;
+}
+
 .table {
-    width: 50%;
-    margin-left: 10%;
+    width: 62%;
+    margin-left: 1.5%;
 }
 
 .table-detail-container {
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
 }
+
+.table-head th {
+    border: none;
+    background-color: #333A40;
+    color: white;
+}
+
+.hr-line {
+    margin-bottom: 1.8% !important;
+  }
+
+
+
+
+
+
+

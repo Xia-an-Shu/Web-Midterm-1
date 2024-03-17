@@ -1,0 +1,11 @@
+.car-id {
+    font-weight: 700;
+}
+
+.car-text {
+    font-size: 1.3rem;
+}
+
+.table-row:hover td {
+    background-color: white !important;
+}

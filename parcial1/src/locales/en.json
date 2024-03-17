@@ -1,4 +1,16 @@
 {
-    "Hello":"Hello",
-    "World":"World"
+    "Inicio de sesión": "Sign In",
+    "Nombre de usuario": "Username",
+    "Contraseña": "Password",
+    "Ingresar": "Login",
+    "Cancelar": "Cancel",
+    "Error de autenticacion. Revise sus credenciales": "Authentication error. Check your credentials",
+
+    "Marca": "Brand",
+    "Linea": "Line",
+    "Modelo": "Model",
+
+    "Kilometraje": "Mileage",
+    "Color": "Color",
+    "Referencia": "Reference"
 }

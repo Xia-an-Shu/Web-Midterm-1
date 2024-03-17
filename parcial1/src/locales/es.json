@@ -1,4 +1,16 @@
 {
-    "Hello":"Hola",
-    "World":"Mundo"
+    "Inicio de sesión": "Inicio de sesión",
+    "Nombre de usuario": "Nombre de usuario",
+    "Contraseña": "Contraseña",
+    "Ingresar": "Ingresar",
+    "Cancelar": "Cancelar",
+    "Error de autenticacion. Revise sus credenciales": "Error de autenticacion. Revise sus credenciales",
+
+    "Marca": "Marca",
+    "Linea": "Linea",
+    "Modelo": "Modelo",
+
+    "Kilometraje": "Kilometraje",
+    "Color": "Color",
+    "Referencia": "Referencia"
 }
