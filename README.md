@@ -4,13 +4,21 @@ NOTA IMPORTANTE: Para comprobar el funcionamiento de lo requerido en la segunda 
 
 Parcial #1 - Ronald Diaz Pardo - 202111309
 
-Evidencia de funcionamiento de primera etapa del parcial #1:
+<br><br>
+
+**Evidencia de funcionamiento de primera etapa del parcial #1:**
+
+<br><br>
 
 ![image](https://github.com/Xia-an-Shu/Web-Midterm-1/assets/88670910/4681a842-9d5c-4076-8841-59faadd39e16)
 
 ![image](https://github.com/Xia-an-Shu/Web-Midterm-1/assets/88670910/6dceb312-f688-4af1-809b-5e59d915147e)
 
+<br><br>
+
 Evidencia de funcionamiento de la segunda etapa del parcial #2:
+
+<br><br>
 
 ![image](https://github.com/Xia-an-Shu/Web-Midterm-1/assets/88670910/7530d7fb-1fd7-4a2b-b56f-369c6aa68663)
 
