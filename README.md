@@ -1,6 +1,6 @@
 # Web-Midterm-1
 
-NOTA IMPORTANTE: Para comprobar el funcionamiento de lo requerido en la segunda etapa del parcial se debe de usar la consola del browser para estblacer las dimenciones de visualizacion de la pagina como 1440 x 1024. Esto debido a que el Figma proporcionado en el parcial esta hecho badado las dimensiones "desktop" establecidas por los frames de Figma, por ello, para que la calificacion sea justa esta debe se hacerce sobre las dimensiones de ese frame a la fecha de entrega (Domingo 17 de 2024).
+NOTA IMPORTANTE: Para comprobar el funcionamiento de lo requerido en la segunda etapa del parcial se debe de usar la consola del browser para estblacer las dimenciones de visualizacion de la pagina como 1440 x 1024. Esto debido a que el Figma proporcionado en el parcial esta hecho basado en las dimensiones "desktop" establecidas por los frames de Figma, por ello, para que la calificacion sea justa esta debe se hacerce sobre las dimensiones de ese frame a la fecha de entrega (Domingo 17 de 2024).
 
 Parcial #1 - Ronald Diaz Pardo - 202111309
 
